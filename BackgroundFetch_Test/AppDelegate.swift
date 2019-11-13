@@ -12,10 +12,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var person = 0
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        application.setMinimumBackgroundFetchInterval(180) // set for every 3 minutes. 1800 = 30 minutes.
         return true
     }
 
@@ -42,5 +43,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        if person > 20 {
+            person = 1
+        } else {
+            person += 1
+        }
+        if application.backgroundRefreshStatus == .available && application.applicationState == .background {
+            Networking.fetchData(numberOfPerson: person) { response in
+                switch response {
+                case .new:
+                    completionHandler(.newData)
+                case .old:
+                    completionHandler(.noData)
+                case .fail:
+                    completionHandler(.failed)
+                }
+            }
+        } else {
+            print("🤖🔸🔸🔸🤖 application.backgroundRefreshStatus is not available")
+        }
+    }
 }
 

@@ -12,6 +12,8 @@
 		E41434F4237C920F00476E3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41434F2237C920F00476E3F /* Main.storyboard */; };
 		E41434F6237C921100476E3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E41434F5237C921100476E3F /* Assets.xcassets */; };
 		E41434F9237C921100476E3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E41434F7237C921100476E3F /* LaunchScreen.storyboard */; };
+		E4143501237C954400476E3F /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4143500237C954400476E3F /* Networking.swift */; };
+		E4143503237C965000476E3F /* StarWarsCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4143502237C965000476E3F /* StarWarsCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		E41434F5237C921100476E3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E41434F8237C921100476E3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E41434FA237C921100476E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4143500237C954400476E3F /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		E4143502237C965000476E3F /* StarWarsCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				E41434F5237C921100476E3F /* Assets.xcassets */,
 				E41434F7237C921100476E3F /* LaunchScreen.storyboard */,
 				E41434FA237C921100476E3F /* Info.plist */,
+				E4143500237C954400476E3F /* Networking.swift */,
+				E4143502237C965000476E3F /* StarWarsCharacter.swift */,
 			);
 			path = BackgroundFetch_Test;
 			sourceTree = "<group>";
@@ -96,6 +102,11 @@
 				TargetAttributes = {
 					E41434EA237C920F00476E3F = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -135,7 +146,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4143501237C954400476E3F /* Networking.swift in Sources */,
 				E41434F1237C920F00476E3F /* ViewController.swift in Sources */,
+				E4143503237C965000476E3F /* StarWarsCharacter.swift in Sources */,
 				E41434EF237C920F00476E3F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +296,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6WUZ2D4QXV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BackgroundFetch_Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -301,7 +314,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6WUZ2D4QXV;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = BackgroundFetch_Test/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
